@@ -1,3 +1,4 @@
+
 <div align="center">
 
 # **Bittensor SDK - ROCm Edition 🧠🔥**
@@ -5,11 +6,11 @@
 [![CodeQL](https://github.com/opentensor/bittensor/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/opentensor/bittensor/actions)
 [![PyPI version](https://badge.fury.io/py/bittensor.svg)](https://badge.fury.io/py/bittensor)
 [![Codecov](https://codecov.io/gh/opentensor/bittensor/graph/badge.svg)](https://app.codecov.io/gh/opentensor/bittensor)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## Internet-scale Neural Networks <!-- omit in toc -->
+## Internet-scale Neural Networks
 
 [Discord](https://discord.gg/qasY3HA9F9) • [Network](https://taostats.io/) • [Research](https://bittensor.com/whitepaper) • [Documentation](https://docs.bittensor.com)
 
@@ -26,22 +27,22 @@ This modified fork of [Bittensor](https://github.com/opentensor/bittensor) is **
 - ✅ Python 3.12
 - ✅ Ubuntu 22.04 / Kernel 6.8+
 
-🎯 **Goal**: Mine, validate and explore Bittensor using an AMD ROCm rig – without CUDA or Docker dependencies.
+🎯 **Goal**: Mine, validate, and explore Bittensor using an AMD ROCm rig – without CUDA or Docker dependencies.
 
 ---
 
 ## 🚨 BEFORE INSTALLING
 
 You **must install ROCm and PyTorch ROCm manually** following this official guide:  
-👉 [https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu](https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu)
+👉 [eliranwong/MultiAMDGPU_AIDev_Ubuntu](https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu)
 
 ---
 
 ## ✅ Quick Installation
 
 ```bash
-git clone https://github.com/your-user/bittensor-rocm.git
-cd bittensor-rocm
+git clone https://github.com/Dev-next-gen/Bittensor-rocm.git
+cd Bittensor-rocm
 chmod +x install.sh
 ./install.sh
 source venv/bin/activate
@@ -54,6 +55,13 @@ source venv/bin/activate
 ```bash
 python3 -c "import bittensor; print(bittensor.__version__)"
 btcli identity ls
+```
+
+Expected output:
+
+```
+TORCH HIP ACTIVE: True
+BITTENSOR OK: 2.0.0
 ```
 
 ---
@@ -73,7 +81,6 @@ btcli identity ls
 We provide an isolated ROCm test suite to validate functionality **without invoking CUDA**:
 
 ```bash
-# Run ROCm-specific tests:
 pytest
 ```
 
@@ -100,22 +107,6 @@ norecursedirs = tests/unit_tests
 
 ---
 
-## 📦 Legacy Sections (from original)
-
-- [Overview of Bittensor](#overview-of-bittensor)
-- [The Bittensor SDK](#the-bittensor-sdk)
-- [Is Bittensor a blockchain or an AI platform?](#is-bittensor-a-blockchain-or-an-ai-platform)
-- [Subnets](#subnets)
-- [Subnet validators and subnet miners](#subnet-validators-and-subnet-miners)
-- [Yuma Consensus](#yuma-consensus)
-- [Install on macOS and Linux](#install-on-macos-and-linux)
-- [Verify](#verify)
-- [Tests](#tests)
-- [Contributions](#contributions)
-- [License](#license)
-
----
-
 ## ❤️ Support / Donation
 
 Want to support this ROCm fork?  
@@ -129,19 +120,11 @@ Donate to:
 The MIT License (MIT)  
 Copyright © 2025 Leo CAMUS
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
-documentation files (the “Software”), to deal in the Software without restriction, including without limitation 
-the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
-and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of 
-the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
-THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
 
@@ -150,4 +133,4 @@ DEALINGS IN THE SOFTWARE.
 This project integrates/inspires from:
 - Bittensor original (by OpenTensor)
 - ROCm integration by [`eliranwong`](https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu)
-- Community support from Linux/AMD open source contributors
+- Community support from Linux/AMD open-source contributors
