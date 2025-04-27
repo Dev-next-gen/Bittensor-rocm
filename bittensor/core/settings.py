@@ -14,8 +14,11 @@ USER_BITTENSOR_DIR = HOME_DIR / ".bittensor"
 WALLETS_DIR = USER_BITTENSOR_DIR / "wallets"
 MINERS_DIR = USER_BITTENSOR_DIR / "miners"
 
-__version__ = importlib.metadata.version("bittensor")
-
+try:
+    __version__ = importlib.metadata.version("bittensor")
+except importlib.metadata.PackageNotFoundError:
+    # Version fallback si le package n'est pas installé
+    __version__ = "2.0.0-rocm"  # <<< Mets ce que tu veux ici comme numéro de version
 
 if not READ_ONLY:
     # Create dirs if they don't exist

@@ -431,6 +431,3 @@ def determine_chain_endpoint_and_network(
 
     return "unknown", network
 from .registration.pow import create_pow, create_pow_async
-
-from .torch_utils import is_gpu_available
-

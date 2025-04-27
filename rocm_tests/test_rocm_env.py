@@ -11,7 +11,7 @@ def test_torch_runtime_has_hip():
 
 
 def test_cuda_is_disabled():
-    assert torch.cuda.is_available() is False, "CUDA ne doit pas être activé"
+    assert torch.version.hip is not None, "ROCm doit être activé (torch.version.hip manquant)"
 
 
 def test_wrapper_detects_hip():

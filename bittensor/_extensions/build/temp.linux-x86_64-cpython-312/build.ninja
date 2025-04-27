@@ -1,0 +1,24 @@
+ninja_required_version = 1.3
+cxx = c++
+
+cflags = -pthread -B /root/miniconda3/compiler_compat -fno-strict-overflow -Wsign-compare -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /root/miniconda3/include -fPIC -O2 -isystem /root/miniconda3/include -fPIC -I/root/conda/lib/python3.12/site-packages/torch/include -I/root/conda/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/root/conda/lib/python3.12/site-packages/torch/include/TH -I/root/conda/lib/python3.12/site-packages/torch/include/THC -I/root/miniconda3/include/python3.12 -c
+post_cflags = -fPIC -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -O3 -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1013"' -DTORCH_EXTENSION_NAME=bittensor_helpers -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++17
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
+  depfile = $out.d
+  deps = gcc
+
+
+
+
+
+build /mnt/data/Bittensor-rocm/bittensor/_extensions/build/temp.linux-x86_64-cpython-312/bittensor_helpers/ops.o: compile /mnt/data/Bittensor-rocm/bittensor/_extensions/bittensor_helpers/ops.cpp
+
+
+
+
+
+
