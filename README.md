@@ -120,6 +120,46 @@ export LD_LIBRARY_PATH=$(python -c 'import torch; import os; print(os.path.join(
 
 ✅ After compilation, you will be able to use ROCm GPU acceleration in Bittensor.
 
+🛠️ CLI Wallet Management (btcli)
+
+After installation, you can manage wallets directly using the CLI:
+
+# List available wallets
+btcli wallet list
+
+# Create a new coldkey
+btcli wallet new-coldkey --wallet.name YourWalletName
+
+# Create a new hotkey
+btcli wallet new-hotkey --wallet.name YourWalletName --wallet.hotkey YourHotkeyName
+
+# Regenerate a coldkey if needed
+btcli wallet regen-coldkey --wallet.name YourWalletName
+
+🛠️ CLI Metagraph Management (btcli)
+
+You can also synchronize and inspect the Bittensor Metagraph:
+
+# Synchronize the Metagraph
+btcli metagraph sync
+
+# Overview the Metagraph
+btcli metagraph overview
+
+🧪 Wallet Management via Python
+
+Example if you want to interact manually in Python:
+
+from bittensor_wallet import Wallet
+
+# Load existing wallet
+wallet = Wallet(name="YourWalletName", hotkey="YourHotkeyName")
+
+print(f"Coldkey Address: {wallet.coldkeypub.ss58_address}")
+print(f"Hotkey Address: {wallet.hotkey.ss58_address}")
+
+✅ Full coldkey/hotkey control directly in Python.
+
 ---
 
 ## 💖 Support / Donation
