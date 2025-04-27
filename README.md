@@ -1,22 +1,16 @@
-# 📚 **Bittensor SDK - ROCm Edition 🫠🔦**
+# 📚 Bittensor SDK - ROCm Edition 🫠🔦
 
-[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/bittensor)
-[![CodeQL](https://github.com/opentensor/bittensor/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/opentensor/bittensor/actions)
-[![PyPI version](https://badge.fury.io/py/bittensor.svg)](https://badge.fury.io/py/bittensor)
-[![Codecov](https://codecov.io/gh/opentensor/bittensor/graph/badge.svg)](https://app.codecov.io/gh/opentensor/bittensor)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/bittensor) [![CodeQL](https://github.com/opentensor/bittensor/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/opentensor/bittensor/actions) [![PyPI version](https://badge.fury.io/py/bittensor.svg)](https://badge.fury.io/py/bittensor) [![Codecov](https://codecov.io/gh/opentensor/bittensor/graph/badge.svg)](https://app.codecov.io/gh/opentensor/bittensor) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
----
+## 🛠️ Internet-scale Neural Networks
 
-## 🛠️ **Internet-scale Neural Networks**
-
-[Discord](https://discord.gg/qasY3HA9F9) • [Network](https://taostats.io/) • [Research](https://bittensor.com/whitepaper) • [Documentation](https://docs.bittensor.com)
+[Discord](https://discord.gg/bittensor) • [Network](https://taostats.io/) • [Research](https://bittensor.com/whitepaper) • [Documentation](https://docs.bittensor.com)
 
 ---
 
 ## ⚡ ROCm Version
 
-This modified fork of Bittensor is **100% compatible with**:
+This modified fork of Bittensor is 100% compatible with:
 
 - ✅ PyTorch 2.4.0 ROCm
 - ✅ ROCm 6.3.4 (multi-GPU AMD)
@@ -29,7 +23,7 @@ This modified fork of Bittensor is **100% compatible with**:
 
 ## 🚨 BEFORE INSTALLING
 
-You **must install ROCm and PyTorch ROCm manually** following this official guide:  
+You must install ROCm and PyTorch ROCm manually following this official guide:  
 👉 [eliranwong/MultiAMDGPU_AIDev_Ubuntu](https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu)
 
 ---
@@ -50,12 +44,12 @@ source venv/bin/activate
 
 ```bash
 python3 -c "import bittensor; print(bittensor.__version__)"
-btcli identity ls
+btcli wallet list
 ```
 
-Expected output:
+**Expected output:**
 
-```bash
+```
 TORCH HIP ACTIVE: True
 BITTENSOR OK: 2.0.0
 ```
@@ -65,10 +59,10 @@ BITTENSOR OK: 2.0.0
 ## ✅ Features Maintained
 
 - Fully working `btcli`
-- TAO wallet & coldkey support
+- TAO wallet coldkey & hotkey support
 - RPC / Axon / Metagraph communication
 - ROCm-based mining support
-- Subnet registration & sync
+- Subnet registration & synchronization
 
 ---
 
@@ -80,9 +74,9 @@ We provide an isolated ROCm test suite to validate functionality without invokin
 pytest
 ```
 
-**Structure:**
+### Structure:
 
-```
+```text
 rocm_tests/
 ├── __init__.py
 ├── test_imports_rocm.py
@@ -90,9 +84,9 @@ rocm_tests/
 └── test_pow_smoke_rocm.py
 ```
 
-**pytest.ini** (at project root):
+### pytest.ini (at project root):
 
-```ini
+```text
 [pytest]
 minversion = 6.0
 addopts = -ra -q
@@ -103,11 +97,11 @@ norecursedirs = tests/unit_tests
 
 ---
 
-## 🔥 Additional Step: Compile `bittensor_helpers` Extension (for ROCm)
+## 🔥 Additional Step: Compile bittensor_helpers Extension (for ROCm)
 
-Bittensor ROCm requires compiling a custom extension (`bittensor_helpers`) to enable GPU PoW solving.
+Bittensor ROCm requires compiling a custom extension (bittensor_helpers) to enable GPU PoW solving.
 
-Follow these steps:
+### Steps:
 
 ```bash
 cd bittensor/_extensions
@@ -131,8 +125,12 @@ export LD_LIBRARY_PATH=$(python -c 'import torch; import os; print(os.path.join(
 ## 💖 Support / Donation
 
 Want to support this ROCm fork?  
-Donate to:  
-`0xa46381Ad9febd785449074A0e3D8146c7d9Fd9ab` (ETH/TAO compatible)
+Donate to:
+
+```
+0xa46381Ad9febd785449074A0e3D8146c7d9Fd9ab
+```
+*(ETH / TAO compatible)*
 
 ---
 
@@ -153,6 +151,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 This project integrates/inspires from:
 
-- Bittensor original (by OpenTensor)
-- ROCm integration by [eliranwong](https://github.com/eliranwong)
+- [Bittensor original (by OpenTensor)](https://github.com/opentensor/bittensor)
+- [ROCm integration by eliranwong](https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu)
 - Community support from Linux/AMD open-source contributors
