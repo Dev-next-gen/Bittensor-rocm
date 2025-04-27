@@ -1,6 +1,6 @@
 # 📚 Bittensor SDK - ROCm Edition 🫠🔦
 
-[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/bittensor) [![CodeQL](https://github.com/opentensor/bittensor/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/opentensor/bittensor/actions) [![PyPI version](https://badge.fury.io/py/bittensor.svg)](https://badge.fury.io/py/bittensor) [![Codecov](https://codecov.io/gh/opentensor/bittensor/graph/badge.svg)](https://app.codecov.io/gh/opentensor/bittensor) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/bittensor) [![CodeQL](https://github.com/opentensor/bittensor/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/opentensor/bittensor/actions) [![PyPI version](https://badge.fury.io/py/bittensor.svg)](https://badge.fury.io/py/bittensor) [![Codecov](https://codecov.io/gh/opentensor/bittensor/graph/badge.svg)](https://app.codecov.io/gh/opentensor/bittensor) [![License: MIT](https://opensource.org/licenses/MIT)](https://opensource.org/licenses/MIT)
 
 ## 🛠️ Internet-scale Neural Networks
 
@@ -120,10 +120,13 @@ export LD_LIBRARY_PATH=$(python -c 'import torch; import os; print(os.path.join(
 
 ✅ After compilation, you will be able to use ROCm GPU acceleration in Bittensor.
 
-🛠️ CLI Wallet Management (btcli)
+---
+
+## 🛠️ CLI Wallet Management (btcli)
 
 After installation, you can manage wallets directly using the CLI:
 
+```bash
 # List available wallets
 btcli wallet list
 
@@ -135,21 +138,29 @@ btcli wallet new-hotkey --wallet.name YourWalletName --wallet.hotkey YourHotkeyN
 
 # Regenerate a coldkey if needed
 btcli wallet regen-coldkey --wallet.name YourWalletName
+```
 
-🛠️ CLI Metagraph Management (btcli)
+---
+
+## 🛠️ CLI Metagraph Management (btcli)
 
 You can also synchronize and inspect the Bittensor Metagraph:
 
+```bash
 # Synchronize the Metagraph
 btcli metagraph sync
 
 # Overview the Metagraph
 btcli metagraph overview
+```
 
-🧪 Wallet Management via Python
+---
+
+## 🧪 Wallet Management via Python
 
 Example if you want to interact manually in Python:
 
+```python
 from bittensor_wallet import Wallet
 
 # Load existing wallet
@@ -157,6 +168,7 @@ wallet = Wallet(name="YourWalletName", hotkey="YourHotkeyName")
 
 print(f"Coldkey Address: {wallet.coldkeypub.ss58_address}")
 print(f"Hotkey Address: {wallet.hotkey.ss58_address}")
+```
 
 ✅ Full coldkey/hotkey control directly in Python.
 
@@ -170,6 +182,7 @@ Donate to:
 ```
 0xa46381Ad9febd785449074A0e3D8146c7d9Fd9ab
 ```
+
 *(ETH / TAO compatible)*
 
 ---
