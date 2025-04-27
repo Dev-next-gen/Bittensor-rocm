@@ -96,3 +96,6 @@ classifiers = [
 [tool.setuptools]
 package-dir = {"bittensor" = "bittensor"}
 script-files = ["bittensor/utils/certifi.sh"]
+
+[project.scripts]
+btcli = "bittensor.__main__:main"
