@@ -204,6 +204,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 This project integrates/inspires from:
 
-- [Bittensor original (by OpenTensor)](https://github.com/opentensor/bittensor)
-- [ROCm integration by eliranwong](https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu)
+## 📎 Related Projects
+
+- [Bittensor (Official OpenTensor Repo)](https://github.com/opentensor/bittensor)
+- [ROCm multi-GPU integration by eliranwong](https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu)
 - Community support from Linux/AMD open-source contributors
