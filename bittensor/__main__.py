@@ -5,7 +5,7 @@ import sys
 from bittensor import __version__
 from bittensor.utils.version import check_latest_version_in_pypi
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) > 1 and sys.argv[1] == "certifi":
         # Resolve the path to certifi.sh
         certifi_script = os.path.join(os.path.dirname(__file__), "utils", "certifi.sh")
@@ -21,3 +21,6 @@ if __name__ == "__main__":
     else:
         print(f"Installed Bittensor SDK version: {__version__}")
         check_latest_version_in_pypi()
+
+if __name__ == "__main__":
+    main()
