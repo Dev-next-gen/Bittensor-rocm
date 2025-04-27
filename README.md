@@ -103,6 +103,31 @@ norecursedirs = tests/unit_tests
 
 ---
 
+## 🔥 Additional Step: Compile `bittensor_helpers` Extension (for ROCm)
+
+Bittensor ROCm requires compiling a custom extension (`bittensor_helpers`) to enable GPU PoW solving.
+
+Follow these steps:
+
+```bash
+cd bittensor/_extensions
+python setup.py clean --all
+python setup.py build_ext --inplace
+python setup.py install
+```
+
+If you encounter errors about `libc10.so` not found, please run:
+
+```bash
+export LD_LIBRARY_PATH=$(python -c 'import torch; import os; print(os.path.join(os.path.dirname(torch.__file__), "lib"))'):$LD_LIBRARY_PATH
+```
+
+*(Make it permanent by adding it to your `~/.bashrc`.)*
+
+✅ After compilation, you will be able to use ROCm GPU acceleration in Bittensor.
+
+---
+
 ## 💖 Support / Donation
 
 Want to support this ROCm fork?  
