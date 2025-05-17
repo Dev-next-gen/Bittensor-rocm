@@ -209,3 +209,5 @@ This project integrates/inspires from:
 - [Bittensor (Official OpenTensor Repo)](https://github.com/opentensor/bittensor)
 - [ROCm multi-GPU integration by eliranwong](https://github.com/eliranwong/MultiAMDGPU_AIDev_Ubuntu)
 - Community support from Linux/AMD open-source contributors
+
+  Soon i will drop full process for build AMD inference serve with 8GPU RX7900XT
